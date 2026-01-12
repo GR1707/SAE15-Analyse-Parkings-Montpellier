@@ -1,0 +1,15 @@
+=== SYNTHESE DES DONNEES SAE15 ===
+
+PARKINGS VOITURES
+Nombre de mesures : 288
+Moyenne taux occupation : 0.541
+Ecart-type : 0.198
+Minimum : 0.184
+Maximum : 0.980
+
+STATIONS VELOS
+Nombre de mesures : 684
+Moyenne taux occupation : 0.360
+Ecart-type : 0.262
+Minimum : 0.000
+Maximum : 0.875
