@@ -10,6 +10,4 @@ Les données sont récupérées automatiquement via les API :
 - Parkings voitures
 - Stations vélos
 
-## Lancement du programme
-```bash
-python acquisition.py
+
