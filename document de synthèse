@@ -1,0 +1,24 @@
+=== Voitures ===
+Moyenne : 58.43 %
+Écart-type : 8.81
+Min : 38.48 %
+Max : 68.12 %
+
+=== Vélos ===
+Moyenne : 59.95 %
+Écart-type : 1.29
+Min : 57.52 %
+Max : 63.35 %
+
+Corrélation voitures / vélos : -0.62
+
+
+Le parking voiture présente un taux d’occupation moyen d’environ 59 %, avec des valeurs comprises entre 38 % et 68 %. L’écart-type relativement élevé, de l’ordre de 8 à 9 points, traduit une forte variabilité de la fréquentation selon les heures et les jours. Ces variations montrent que l’utilisation du parking voiture est fortement dépendante des rythmes urbains, avec des périodes creuses marquées et des périodes plus chargées, sans toutefois atteindre la saturation. L’infrastructure apparaît donc correctement dimensionnée au regard des usages observés.
+
+Le parking vélo affiche quant à lui un taux d’occupation moyen proche de 60 %, avec une amplitude beaucoup plus faible, les valeurs oscillant entre 57 % et 63 %. L’écart-type faible, de l’ordre de 1,5 à 2 points, met en évidence une utilisation particulièrement stable et régulière du parking vélo, peu sensible aux variations horaires ou journalières. Cette stabilité suggère une pratique du vélo bien ancrée chez les usagers.
+
+L’analyse conjointe des deux parkings révèle une corrélation négative significative de −0,62 entre l’occupation des parkings voiture et vélo. Cette valeur indique que lorsque l’utilisation du parking voiture augmente, celle du parking vélo tend à diminuer, et inversement. Ce résultat ne va pas dans le sens d’un usage majoritaire du parking vélo comme relais direct du parking voiture. Il suggère plutôt que la voiture et le vélo constituent, pour une large part des usagers, des modes de transport alternatifs.
+
+Ces observations laissent penser que le relais voiture–vélo ne constitue pas le schéma dominant de déplacement sur la période étudiée. L’intervention d’autres modes de transport, tels que le tramway, ou un décalage temporel entre les usages, peuvent également expliquer cette dynamique inverse. Néanmoins, les données montrent que les infrastructures existantes sont globalement adaptées aux usages actuels, tant pour les voitures que pour les vélos, sans situation de saturation observée.
+
+
