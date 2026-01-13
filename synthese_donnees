@@ -1,15 +1,13 @@
-=== SYNTHESE DES DONNEES SAE15 ===
+=== Voitures ===
+Moyenne : 58.43 %
+Écart-type : 8.81
+Min : 38.48 %
+Max : 68.12 %
 
-PARKINGS VOITURES
-Nombre de mesures : 288
-Moyenne taux occupation : 0.541
-Ecart-type : 0.198
-Minimum : 0.184
-Maximum : 0.980
+=== Vélos ===
+Moyenne : 59.95 %
+Écart-type : 1.29
+Min : 57.52 %
+Max : 63.35 %
 
-STATIONS VELOS
-Nombre de mesures : 684
-Moyenne taux occupation : 0.360
-Ecart-type : 0.262
-Minimum : 0.000
-Maximum : 0.875
+Corrélation voitures / vélos : -0.62
