@@ -38,57 +38,42 @@ velos = [
 ]
 
 # =========================
-# Statistiques
+# Conversion numpy
 # =========================
 
 voitures_np = np.array(voitures)
 velos_np = np.array(velos)
 
-print("=== Voitures ===")
-print(f"Moyenne : {np.mean(voitures_np):.2f} %")
-print(f"Écart-type : {np.std(voitures_np):.2f}")
-print(f"Min : {np.min(voitures_np):.2f} %")
-print(f"Max : {np.max(voitures_np):.2f} %")
-
-print("\n=== Vélos ===")
-print(f"Moyenne : {np.mean(velos_np):.2f} %")
-print(f"Écart-type : {np.std(velos_np):.2f}")
-print(f"Min : {np.min(velos_np):.2f} %")
-print(f"Max : {np.max(velos_np):.2f} %")
-
-# Corrélation voiture / vélo
-corr = np.corrcoef(voitures_np[:len(velos_np)], velos_np)[0, 1]
-print(f"\nCorrélation voitures / vélos : {corr:.2f}")
-
 # =========================
-# Graphique avec jours
+# Axe du temps (départ à 9h)
 # =========================
 
 heures_par_jour = 24
-nb_jours = len(voitures) // heures_par_jour
+nb_points = len(voitures_np)
 
-positions_jours = [i * heures_par_jour for i in range(nb_jours)]
-labels_jours = [f"Jour {i+1}" for i in range(nb_jours)]
+positions_jours = [i * heures_par_jour for i in range(nb_points // heures_par_jour)]
+labels_jours = [f"Jour {i+1}\n(9h → 8h)" for i in range(len(positions_jours))]
+
+# =========================
+# Graphique
+# =========================
 
 plt.figure(figsize=(15, 6))
 
-plt.plot(voitures, linestyle='--', marker='o', label="Voitures")
-plt.plot(velos, linestyle='-', marker='x', label="Vélos")
+plt.plot(voitures_np, linestyle='--', marker='o', label="Voitures")
+plt.plot(velos_np, linestyle='-', marker='x', label="Vélos")
 
-# Moyennes
 plt.axhline(np.mean(voitures_np), linestyle=':', linewidth=2, label="Moyenne voitures")
 plt.axhline(np.mean(velos_np), linestyle='--', linewidth=2, label="Moyenne vélos")
 
-# Séparateurs de jours
 for pos in positions_jours:
-    plt.axvline(pos, linestyle=':', alpha=0.2)
+    plt.axvline(pos, linestyle=':', alpha=0.3)
 
-plt.xticks(positions_jours, labels_jours, rotation=45)
-plt.title("Occupation des parkings voiture et vélo par jour")
-plt.xlabel("Jour")
-plt.ylabel("Taux d'occupation (%)")
+plt.xticks(positions_jours, labels_jours)
+plt.xlabel("Jours")
+plt.ylabel("Taux de places libres (%)")
+plt.title("Taux de places libres des parkings voitures et vélos\n(données horaires – début à 9h)")
 plt.grid(alpha=0.3)
 plt.legend()
 plt.tight_layout()
 plt.show()
-
