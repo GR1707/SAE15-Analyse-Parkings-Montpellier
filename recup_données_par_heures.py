@@ -17,9 +17,9 @@ def place_parking(data):
         tab = []
         for i in range(len(data)):
             Nb_place = data[i]['availableSpotNumber']['value']
-            Name = data[i]['name']['value'] # le nom du parking puis le nombre de places libres.
+            Name = data[i]['name']['value'] 
             Nb_place_total = data[i]['totalSpotNumber']['value']
-            pourcentage = Nb_place * 100 / Nb_place_total # pourcentage de places libres
+            pourcentage = Nb_place * 100 / Nb_place_total 
             pourcentage = round(pourcentage, 2)
             tab.append(pourcentage)
         TAB.append(tab)
@@ -31,10 +31,10 @@ def place_parking2(dataVelo):
     with open('donnee.json', 'w') as file:  
         tab = []
         for i in range(len(dataVelo)):
-            Nb_place = dataVelo[i]['freeSlotNumber']['value'] # freeSlotNumber ou availableBikeNumber ??
-            Name = dataVelo[i]['address']['value']['streetAddress'] # l'adresse du parking Ou l' ID ?
+            Nb_place = dataVelo[i]['freeSlotNumber']['value'] 
+            Name = dataVelo[i]['address']['value']['streetAddress'] 
             Nb_place_total = dataVelo[i]['totalSlotNumber']['value']
-            pourcentage = Nb_place * 100 / Nb_place_total # pourcentage de places libres
+            pourcentage = Nb_place * 100 / Nb_place_total 
             pourcentage = round(pourcentage, 2)
             tab.append(pourcentage)
         TAB.append(tab)
