@@ -10,12 +10,9 @@ def calculer_moyenne_par_heure(data):
             moyennes_voitures.append(sum(groupe) / len(groupe))
         elif len(groupe) == velos_group_size:
             moyennes_velos.append(sum(groupe) / len(groupe))
-        else:
-            print(f"Attention : groupe de taille inattendue ({len(groupe)}) ignoré.")
 
     return moyennes_voitures, moyennes_velos
 
-# Exemple d'utilisation
 donnees = [
     [
         55.65,
