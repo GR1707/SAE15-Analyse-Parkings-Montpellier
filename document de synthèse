@@ -1,89 +1,86 @@
 SAE 15 – Analyse de l’utilisation des parkings de Montpellier
 1. Contexte et objectifs
-Dans le cadre de la politique de mobilité de la ville de Montpellier, la mairie a souhaité réaliser une étude sur l’utilisation des parkings voitures et vélos, 
-ainsi que sur l’efficacité du relais voiture / vélo.
-L’objectif est double :
-•	Vérifier si les parkings sont correctement dimensionnés
-•	Analyser la relation entre l’usage de la voiture et celui du vélo, notamment dans un contexte où la ville dispose d’un réseau de tramway développé.
-Cette étude s’appuie exclusivement sur des données open data mises à disposition par Montpellier Méditerranée Métropole.
+Dans le cadre de sa politique de mobilité durable, la ville de Montpellier souhaite analyser l’utilisation de ses parkings voitures et vélos, ainsi que l’efficacité potentielle du relais voiture / vélo.
+Cette étude s’inscrit dans un contexte urbain où la métropole dispose d’un réseau de transports en commun dense, notamment un tramway très développé.
+L’objectif de cette analyse est double :
+•	Évaluer si les capacités des parkings sont adaptées aux usages actuels,
+•	Étudier la relation entre l’utilisation des parkings voitures et vélos, afin de mieux comprendre les comportements de déplacement des usagers.
+L’ensemble de l’étude repose exclusivement sur des données open data fournies par Montpellier Méditerranée Métropole.
 
 2. Sources de données et méthodologie
-Les données utilisées proviennent des API open data de la métropole de Montpellier :
-•	Parkings voitures (capacité totale et places disponibles),
-•	Parkings vélos (nombre de places et disponibilité).
+Les données analysées proviennent des API open data de la métropole de Montpellier :
+•	Parkings voitures (capacité totale et nombre de places disponibles),
+•	Parkings vélos (capacité et disponibilité).
 Un script Python a été développé afin de :
-•	Collecter automatiquement les données à intervalles réguliers (1 mesures par heures pendant 6 jours),
+•	Collecter automatiquement les données à intervalles réguliers (une mesure par heure pendant 6 jours),
 •	Stocker les mesures dans des fichiers exploitables,
-•	Calculer les indicateurs statistiques (moyenne, écart-type, taux d’occupation),
-•	Produire un graphique permettant de visualiser les évolutions temporelles.
+•	Calculer différents indicateurs statistiques (moyenne, taux d’occupation),
+•	Générer un graphique illustrant l’évolution journalière de l’occupation des parkings voitures et vélos.
+Le graphique obtenu présente, pour chaque jour, le taux de places libres (%), ainsi que les lignes de moyenne pour les deux types de parkings.
 
 3. Analyse des parkings voitures
-3.1 Taux de remplissage moyen
-L’analyse des données montre que les parkings voitures présentent un taux d’occupation moyen d’environ 60 % sur la période étudiée (ligne moyenne sur le graphique).
-Ce taux relativement élevé indique que les parkings sont globalement bien utilisés, mais sans être saturés en permanence, 
-ce qui traduit un dimensionnement globalement adapté aux besoins actuels.
+3.1 Taux d’occupation moyen
+L’analyse montre que les parkings voitures présentent un taux de places libres moyen d’environ 60 %, ce qui correspond à un taux d’occupation moyen proche de 40 %.
+La ligne de moyenne sur le graphique met en évidence une occupation significative, sans saturation prolongée.
+Cela indique que les parkings voitures sont globalement bien dimensionnés : ils sont largement utilisés tout en conservant une marge de disponibilité.
 
-3.2 Périodes de saturation et creux d’occupation
-Les données mettent en évidence de fortes variations journalières :
-•	Des pics d’occupation compris entre 65 % et 68 %, atteints quasiment chaque jour ;
-•	Des creux marqués, avec des taux descendant jusqu’à 40 % – 45 %, notamment en début ou fin de journée.
-Le jour 3 se distingue par un minimum particulièrement bas, autour de 39–40 %, ce qui peut s’expliquer par une baisse ponctuelle de fréquentation 
-(jour creux, conditions extérieures, ou évènement particulier).
-Ces variations montrent que les parkings ne sont pas saturés en continu, mais connaissent des périodes de tension à certaines heures comme en journée 
-et une baisse de fréquentation pendant la nuit.
+3.2 Variations journalières : pics et creux d’occupation
+Le graphique met clairement en évidence une forte variabilité quotidienne :
+•	Des périodes de forte occupation, avec des taux de places libres descendant à environ 32 % – 35 %, correspondant à des pics d’utilisation en journée ;
+•	Des périodes creuses, notamment en début et fin de journée, où le taux de places libres peut dépasser 60 %, voire atteindre près de 70 %.
+Le jour 3 se distingue par un minimum particulièrement bas, avec un taux de places libres proche de 38–40 %, traduisant une fréquentation exceptionnelle ou un contexte particulier (jour ouvré plus chargé, événement, conditions extérieures).
+Ces variations montrent que les parkings voitures ne sont pas saturés en continu, mais connaissent des périodes de tension à certaines heures, suivies de phases de décharge marquées.
 
-3.3 Évolution sur plusieurs jours
-Sur l’ensemble de la semaine étudiée :
-•	Le taux d’occupation reste majoritairement au-dessus de 55 % ;
-•	Plusieurs jours présentent des pics supérieurs à 65 %, en particulier les jours 4, 5 et 6 ;
-•	Le dernier jour montre une occupation particulièrement élevée, dû au fait que c’est un jour de weekend (samedi)
-Les parkings voitures suivent donc une dynamique cyclique, avec des comportements relativement similaires d’un jour à l’autre, bien que l’intensité varie.
+3.3 Évolution sur l’ensemble de la période
+Sur les six jours étudiés :
+•	Le taux de places libres reste le plus souvent compris entre 50 % et 65 % ;
+•	Plusieurs jours (notamment les jours 4, 5 et 6) présentent des pics d’occupation plus marqués, avec une baisse notable du taux de places libres ;
+•	Le dernier jour, correspondant à un jour de week-end, montre une occupation élevée, traduisant une fréquentation différente mais soutenue.
+L’utilisation des parkings voitures suit donc une dynamique cyclique, relativement stable d’un jour à l’autre, avec des intensités variables selon le contexte.
 
 4. Analyse des parkings vélos
 4.1 Taux d’occupation moyen
-Les parkings vélos présentent un taux d’occupation moyen d’environ 58–59 %, légèrement inférieur à celui des parkings voitures.
-Contrairement aux parkings voitures, la courbe vélo est :
-•	Beaucoup plus stable,
-•	Avec des variations limitées autour de la moyenne.
+Les parkings vélos présentent un taux de places libres moyen d’environ 58–59 %, très proche de celui des parkings voitures.
+Cependant, contrairement aux voitures, la courbe des vélos est nettement plus régulière.
 
-4.2 Variabilité et usage
-Les taux d’occupation des parkings vélos oscillent principalement entre :
-•	57 % et 62 % sur l’ensemble de la période.
-Les pics restent modérés et aucun phénomène de saturation n’est observé.
-Cela indique que la capacité des parkings vélos est largement suffisante, voire légèrement surdimensionnée à certains moments.
+4.2 Stabilité et variabilité de l’usage
+L’occupation des parkings vélos oscille principalement entre :
+•	57 % et 62 % de places libres sur l’ensemble de la période.
+Les variations sont faibles et aucun phénomène de saturation ou de creux extrême n’est observé.
+Cela suggère que les parkings vélos disposent d’une capacité largement suffisante, voire légèrement surdimensionnée, assurant un bon confort d’usage à tout moment.
 
 5. Étude du relais voiture / vélo
 5.1 Comparaison des dynamiques
-La comparaison directe des deux courbes met en évidence un point essentiel :
-•	Les pics d’occupation des parkings voitures ne correspondent pas systématiquement à des pics d’occupation des parkings vélos ;
-•	Alors que les parkings voitures connaissent des variations importantes (≈ 40 % à 68 %),
-•	Les parkings vélos restent relativement stables autour de leur moyenne.
-Il n’existe donc pas de corrélation directe forte entre l’usage du parking voiture et celui du parking vélo.
+La comparaison visuelle des deux courbes met en évidence un point clé :
+•	Les fortes variations des parkings voitures ne se répercutent pas sur les parkings vélos ;
+•	Les parkings voitures connaissent des fluctuations importantes (≈ 35 % à 68 % de places libres) ;
+•	Les parkings vélos restent stables autour de leur moyenne.
+Il n’existe donc pas de synchronisation évidente entre les deux usages.
 
-5.2 Analyse de la relation entre l’occupation des parkings voitures et vélos
-Le lien entre l’occupation des parkings voitures et celle des parkings vélos a été étudié à l’aide du coefficient de corrélation linéaire de Pearson.
-La corrélation obtenue est de −0,62, ce qui correspond à une corrélation négative modérée à forte.
-Cela signifie que, sur la période observée :
-•	Lorsque le taux d’occupation des parkings voitures augmente,
-•	Le taux d’occupation des parkings vélos a tendance à diminuer,
+5.2 Corrélation entre l’occupation des parkings voitures et vélos
+Le lien entre les deux types de parkings a été étudié grâce au coefficient de corrélation linéaire de Pearson.
+La valeur obtenue est de −0,62, ce qui correspond à une corrélation négative modérée à forte.
+Concrètement :
+•	Lorsque l’occupation des parkings voitures augmente,
+•	L’occupation des parkings vélos tend à diminuer,
 et inversement.
-Cette relation négative indique que l’usage du vélo n’est pas directement associé à l’usage de la voiture. 
-Le vélo n’apparaît donc pas comme un relais automatique après l’utilisation de la voiture, mais comme un mode de déplacement complémentaire, 
-répondant à des logiques propres.
-Il est toutefois important de souligner que la corrélation ne traduit pas un lien de causalité direct.
-D’autres facteurs, tels que l’offre de transports en commun, l’heure de la journée ou la localisation des parkings, peuvent fortement influencer ces comportements.
+Cela montre que le vélo n’est pas utilisé comme un relais direct et systématique après l’utilisation de la voiture.
+Les deux modes répondent à des logiques d’usage distinctes.
+Il convient toutefois de rappeler que la corrélation n’implique pas une relation de causalité. Des facteurs externes tels que l’heure, la météo, la localisation des parkings ou l’offre de transports en commun peuvent influencer ces comportements.
 
 5.3 Interprétation : rôle du tramway
-Cette absence de corrélation s’explique probablement par la présence du tramway dans la ville de Montpellier.
-Les usagers ne choisissent pas nécessairement :
-•	Le parking vélo le plus proche de leur parking voiture,
-•	Mais privilégient un mode de transport jugé plus rapide ou plus direct.
-Le vélo est ainsi utilisé comme un mode de déplacement complémentaire, et non comme un relais automatique et systématique après l’usage de la voiture.
-6. Conclusion :
-L’étude met en évidence que :
-•	Les parkings voitures sont bien dimensionnés, mais soumis à des variations importantes selon les jours et les heures ;
-•	Les parkings vélos présentent un taux d’occupation stable, sans saturation ;
-•	Le relais voiture / vélo existe, mais n’est pas automatique et dépend fortement des alternatives de transport disponibles.
+Cette relation négative s’explique en grande partie par la présence du réseau de tramway montpelliérain.
+Les usagers ne privilégient pas systématiquement un enchaînement voiture → vélo, mais choisissent le mode de transport jugé le plus rapide ou le plus adapté.
+Le vélo apparaît ainsi comme un mode de déplacement complémentaire, et non comme un relais automatique entre la voiture et les autres transports.
+
+6. Conclusion
+Cette étude met en évidence que :
+•	Les parkings voitures sont globalement bien dimensionnés, mais soumis à de fortes variations horaires et journalières ;
+•	Les parkings vélos présentent une occupation stable, sans saturation, traduisant une capacité suffisante ;
+•	Le relais voiture / vélo existe, mais n’est pas automatique, et dépend fortement des alternatives disponibles, notamment le tramway.
+Ces résultats confirment l’importance d’une approche multimodale de la mobilité urbaine à Montpellier, intégrant l’ensemble des modes de transport plutôt qu’un relais unique et systématique.
+
+
 
  
 === Voitures ===
@@ -99,3 +96,4 @@ Min : 57.52 %
 Max : 63.35 %
 
 Corrélation voitures / vélos : -0.62
+
